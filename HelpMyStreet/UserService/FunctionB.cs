@@ -6,27 +6,37 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using HelpMyStreet.Contracts.UserService;
+using MediatR;
+using System;
 
 namespace HelpMyStreet.UserService
 {
-    public static class FunctionB
+    public class FunctionB
     {
+        private readonly IMediator _mediator;
+
+        public FunctionB(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [FunctionName("FunctionB")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = null)] HttpRequest req,
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] FunctionBRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            try
+            {
+                log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+                FunctionBResponse response = await _mediator.Send(req);
+                return new OkObjectResult(response);
+            }
+            catch (Exception exc)
+            {
+                return new BadRequestObjectResult(exc);
+            }
         }
     }
 }
