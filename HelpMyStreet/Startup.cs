@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using HelpMyStreet.Core.Interfaces.Repositories;
-using HelpMyStreet.Handlers.UserService;
+using HelpMyStreet.Handlers;
 using HelpMyStreet.Mappers;
 using HelpMyStreet.Repo;
 using MediatR;

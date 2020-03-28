@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HelpMyStreet.Handlers.UserService
+namespace HelpMyStreet.Handlers
 {
     public class FunctionAHandler : IRequestHandler<FunctionARequest, FunctionAResponse>
     {

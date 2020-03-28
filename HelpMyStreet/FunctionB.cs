@@ -7,27 +7,27 @@ using MediatR;
 using System;
 using HelpMyStreet.Core.Domains.Entities;
 
-namespace HelpMyStreet.UserService
+namespace HelpMyStreet
 {
-    public class FunctionA
+    public class FunctionB
     {
         private readonly IMediator _mediator;
 
-        public FunctionA(IMediator mediator)
+        public FunctionB(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [FunctionName("FunctionA")]
+        [FunctionName("FunctionB")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] FunctionARequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] FunctionBRequest req,
             ILogger log)
         {
             try
             {
                 log.LogInformation("C# HTTP trigger function processed a request.");
 
-                FunctionAResponse response = await _mediator.Send(req);
+                FunctionBResponse response = await _mediator.Send(req);
                 return new OkObjectResult(response);
             }
             catch (Exception exc)

@@ -3,7 +3,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HelpMyStreet.Handlers.UserService
+namespace HelpMyStreet.Handlers
 {
     public class FunctionBHandler : IRequestHandler<FunctionBRequest, FunctionBResponse>
     {
