@@ -1,14 +1,11 @@
-﻿using System.IO;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using MediatR;
 using System;
-using HelpMyStreet.Contracts.UserService;
+using HelpMyStreet.Core.Domains.Entities;
 
 namespace HelpMyStreet.UserService
 {

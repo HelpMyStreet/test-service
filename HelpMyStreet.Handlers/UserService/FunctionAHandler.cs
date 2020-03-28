@@ -1,6 +1,5 @@
-﻿using HelpMyStreet.Contracts.UserService;
+﻿using HelpMyStreet.Core.Domains.Entities;
 using HelpMyStreet.Core.Interfaces.Repositories;
-//using HelpMyStreet.Core.Interfaces.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;

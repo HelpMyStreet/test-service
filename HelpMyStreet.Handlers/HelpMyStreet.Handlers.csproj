@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HelpMyStreet.Contracts\HelpMyStreet.Contracts.csproj" />
     <ProjectReference Include="..\HelpMyStreet.Core\HelpMyStreet.Core.csproj" />
   </ItemGroup>
 
