@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HelpMyStreet.Contracts.UserService
+namespace HelpMyStreet.Core.Domains.Entities
 {
-    public class FunctionAResponse
+    public class FunctionBResponse
     {
         public string Status { get; set; }
     }

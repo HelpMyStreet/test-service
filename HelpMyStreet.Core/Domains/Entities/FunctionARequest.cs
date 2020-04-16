@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HelpMyStreet.Contracts.UserService
+namespace HelpMyStreet.Core.Domains.Entities
 {
     public class FunctionARequest : IRequest<FunctionAResponse>
     {
